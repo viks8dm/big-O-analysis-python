@@ -1,0 +1,58 @@
+## Big-O analysis of implementation
+
+#### Task-0
+
+O(1):
+* first record access = O(1)
+* last record access = O(1)
+
+result = 2*O(1) = O(1)
+
+#### Task-1
+
+O(n):
+* for loop over texts: O(n)
+* set() assignment: O(1)
+* for loop over text_list and call_list: O(n) + O(m)
+
+result = O(1) + 2*O(n) + O(m) = O(n)
+
+#### Task-2
+
+O(n<sup>2</sup>)
+* dict() initialization: O(1)
+* caller and receiver for loops: 2* O(n)
+* nested for-loop over receiver-items and caller-items: O(n*n)
+* update step: O(r)
+* max computation: O(n)
+* max_time: O(1)
+
+result: 2* O(1) + 3* O(n) + O(r) + O(n * n) = O(n * n)
+
+#### Task-3
+
+O(n logn)
+* for loop: O(n)
+* set with for loop: O(n)
+* set initialization: O(1)
+* for with if statements: O(n)
+* sorting: O(n logn)
+* print with for-loop: O(n) + O(1)
+* for with print and percent-calculation: O(n) + O(1)
+
+result: O(n logn) + 5* O(n) + 3* O(1)
+
+#### Task-4
+
+O(n<sup>2</sup>)
+* caller and receiver for loops: 2* O(n)
+* set initialization: O(1)
+* nested for-loop and add: O(n * n) + O(1)
+* sorting: O(n logn)
+* print and for-loop: O(1) + O(n)
+
+result: 3* O(1) + 3* O(n) + O(n logn) + O(n * )
+
+## Reference:
+
+* [python time complexity](https://wiki.python.org/moin/TimeComplexity)
