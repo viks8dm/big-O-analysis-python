@@ -25,7 +25,7 @@ numbers = set()
 
 for i in range(2):
     text_list = [row[i] for row in texts]
-    numbers.update(num_list)
+    numbers.update(text_list)
 
     call_list = [row[i] for row in calls]
     numbers.update(call_list)
