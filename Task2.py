@@ -20,18 +20,18 @@ Print a message:
 September 2016.".
 """
 
-only_received = dict()
-caller = {row[0]: int(row[-1]) for row in calls}
-receiver = {row[1]: int(row[-1]) for row in calls}
-for (c,c_time), (r,r_time) in zip(caller.items(), receiver.items()):
-    if c in receiver.keys():
-        caller[c] = c_time + receiver[c]
-    if r not in caller.keys():
-        only_received[r] = r_time
+num_time_dict = dict()
+for call in calls:
+    num_time_dict[call[0]] = 0
+    num_time_dict[call[1]] = 0
 
-caller.update(only_received)
+for num in num_time_dict:
+    for call in calls:
+        for i in range(2):
+            if call[i] == num:
+                num_time_dict[num] += int(call[3])
 
-tel_num = max(caller, key=caller.get)
-max_time = caller[tel_num]
+tel_num = max(num_time_dict, key=num_time_dict.get)
+max_time = num_time_dict[tel_num]
 
 print("%s spent the longest time, %d seconds, on the phone during September 2016." % (tel_num, max_time))
